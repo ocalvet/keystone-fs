@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ocalvet/keystone-fs#readme",
   "dependencies": {
-    "keystone": "^4.0.0-rc.1"
+    "keystone": "^4.0.0-rc.1",
+    "pug": "^2.0.3"
   }
 }
