@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/ocalvet/keystone-fs#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "keystone": "^4.0.0-rc.1",
-    "pug": "^2.0.3"
+    "next": "^6.1.1",
+    "pug": "^2.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }

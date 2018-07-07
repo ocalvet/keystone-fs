@@ -1,14 +1,25 @@
-var keystone = require('keystone');
-var importRoutes = keystone.importer(__dirname);
+const keystone = require('keystone');
 
-var routes = {
-  views: importRoutes('./views'),
-  api: importRoutes('./api'),
-};
+// Setup Route Bindings
+exports = module.exports = nextApp => keystoneApp => {
 
-exports = module.exports = function (app) {
-  app.get('/', routes.views.index);
-  app.get('/add-event', routes.views.addEvent);
-  app.post('/api/event', routes.api.event.post);
-  app.get('/api/event', routes.api.event.get);
+	// Next request handler
+	const handle = nextApp.getRequestHandler();
+
+	keystoneApp.get('/api/event', (req, res, next) => {
+		const Event = keystone.list('Event');
+    Event
+      .model
+			.find()
+			// .where('state', 'published')
+			// .sort('-publishedDate')
+			.exec(function (err, results) {
+				if (err) throw err;
+				res.json(results);
+			});
+	});
+
+	keystoneApp.get('*', (req, res) => {
+		return handle(req, res);
+	});
 };

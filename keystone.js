@@ -1,4 +1,7 @@
-var keystone = require('keystone');
+const keystone = require('keystone');
+const next = require('next');
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
 
 keystone.init({
   'cookie secret': 'secure string goes here',
@@ -11,6 +14,11 @@ keystone.init({
 });
 
 keystone.import('models');
-keystone.set('routes', require('./routes'));
 
-keystone.start();
+// Start Next app
+app
+  .prepare()
+  .then(() => {
+    keystone.set('routes', require('./routes')(app));
+    keystone.start();
+  });
