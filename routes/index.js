@@ -10,4 +10,5 @@ exports = module.exports = function (app) {
   app.get('/', routes.views.index);
   app.get('/add-event', routes.views.addEvent);
   app.post('/api/event', routes.api.event.post);
+  app.get('/api/event', routes.api.event.get);
 };
