@@ -1,0 +1,25 @@
+{
+  "name": "keystone-fs",
+  "version": "1.0.0",
+  "description": "A website to configure keystonejs from scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocalvet/keystone-fs.git"
+  },
+  "keywords": [
+    "keystone"
+  ],
+  "author": "Ovidio R. Calvet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ocalvet/keystone-fs/issues"
+  },
+  "homepage": "https://github.com/ocalvet/keystone-fs#readme",
+  "dependencies": {
+    "keystone": "^4.0.0-rc.1"
+  }
+}
