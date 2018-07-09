@@ -1,7 +1,10 @@
+require('dotenv').config();
 const keystone = require('keystone');
 const next = require('next');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
+
+console.log('env', process.env);
 
 keystone.init({
   'cookie secret': 'secure string goes here',
