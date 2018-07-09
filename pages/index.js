@@ -19,9 +19,6 @@ class App extends Component {
     return (
       <div className='container'>
         <style jsx>{`
-            .header {
-              padding: 16px 16px;
-            }
             .content {
               padding: 16px 16px;
             }
