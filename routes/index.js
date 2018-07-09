@@ -19,6 +19,19 @@ exports = module.exports = nextApp => keystoneApp => {
 			});
 	});
 
+	keystoneApp.get('/api/gallery', (req, res, next) => {
+		const Gallery = keystone.list('Gallery');
+    Gallery
+      .model
+			.find()
+			// .where('state', 'published')
+			// .sort('-publishedDate')
+			.exec(function (err, results) {
+				if (err) throw err;
+				res.json(results);
+			});
+	});
+
 	keystoneApp.get('*', (req, res) => {
 		return handle(req, res);
 	});
