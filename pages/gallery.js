@@ -18,6 +18,13 @@ class About extends Component {
     const { galleries } = this.state;
     return (
       <div>
+        <style jsx>{`
+            .image {
+              padding: 16px 16px;
+              width: 200px;
+              height: 200px;
+            }
+        `}</style>
         <h1>Galleries</h1>
         {galleries.map(g => (
           <div key={g._id}>
