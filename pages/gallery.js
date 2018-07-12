@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
+import GalleryList from '../components/GalleryList';
 
 class About extends Component {
   state = {
@@ -25,6 +26,7 @@ class About extends Component {
               height: 200px;
             }
         `}</style>
+        <GalleryList />
         <h1>Galleries</h1>
         {galleries.map(g => (
           <div key={g._id}>
