@@ -19,27 +19,7 @@ class About extends Component {
     const { galleries } = this.state;
     return (
       <div>
-        <style jsx>{`
-            .image {
-              padding: 16px 16px;
-              width: 200px;
-              height: 200px;
-            }
-        `}</style>
-        <GalleryList />
-        <h1>Galleries</h1>
-        {galleries.map(g => (
-          <div key={g._id}>
-            <h4>{g.name}</h4>
-            <div>
-            {g.images.map(i => {
-              return (
-                <img key={i._id} className="image" src={i.secure_url} alt={i.secure_url} />
-              );
-            })}
-            </div>
-          </div>
-        ))}
+        <GalleryList galleries={galleries} />
       </div>
     );
   };
