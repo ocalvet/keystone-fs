@@ -1,25 +1,22 @@
 import React from 'react';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 
 export default (props) => {
   console.log('Props', props);
   const {gallery} = props; 
   return (
     <div>
-      <style jsx>{`
-          .image {
-            padding: 16px 16px;
-            width: 200px;
-            height: 200px;
-          }
-      `}</style>
-      <h4>{gallery.name}</h4>
-      <div>
-      {gallery.images.map(i => {
-        return (
-          <img key={i._id} className="image" src={i.secure_url} alt={i.secure_url} />
-        );
-      })}
-      </div>
+      <h4 style={{ marginBottom: 15 }}>{gallery.name}</h4>
+      <GridList cols={2.5}>
+        {gallery.images.map(image => (
+          <GridListTile key={image._id}>
+            <img src={image.secure_url} alt={image.secure_url} />
+            <GridListTileBar title={image.secure_url}/>
+          </GridListTile>
+        ))}
+      </GridList>
     </div>
   );
 }
